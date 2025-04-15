@@ -1,3 +1,6 @@
+"use client"
+
+
 import FlightCards from "@/components/FlightCards";
 // import FlightsScheduleChart from "@/components/FlightSchedule2";
 // import FlightShareChart from "@/components/FlightShare";
