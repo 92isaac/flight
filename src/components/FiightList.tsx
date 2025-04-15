@@ -2,6 +2,7 @@ import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Button } from './ui/button';
 import { emirate, Lufthansa, qatar } from '@/assets';
+import { formatCurrency } from '@/lib/utils';
 
 interface FlightCardProps {
   airline: string;
@@ -26,7 +27,7 @@ const flights: FlightCardProps[] = [
     arrival: '14:20',
     duration: '11H 20M',
     stops: 'NON-STOP',
-    price: '$1,572',
+    price: '1572',
     airlineName: 'EMIRATES'
   },
   {
@@ -38,7 +39,7 @@ const flights: FlightCardProps[] = [
     arrival: '14:20',
     duration: '11H 20M',
     stops: 'NON-STOP',
-    price: '$2,072',
+    price: '201072',
     airlineName: 'QATAR AIRWAYS'
   },
   {
@@ -50,7 +51,7 @@ const flights: FlightCardProps[] = [
     arrival: '14:20',
     duration: '11H 20M',
     stops: 'NON-STOP',
-    price: '$1,872',
+    price: '100872',
     airlineName: 'LUFTHANSA'
   },
   {
@@ -62,7 +63,7 @@ const flights: FlightCardProps[] = [
     arrival: '14:20',
     duration: '11H 20M',
     stops: 'NON-STOP',
-    price: '$1,872',
+    price: '100872',
     airlineName: 'EMIRATES'
   },
   {
@@ -74,7 +75,7 @@ const flights: FlightCardProps[] = [
     arrival: '14:20',
     duration: '11H 20M',
     stops: 'NON-STOP',
-    price: '$1,872',
+    price: '100872',
     airlineName: 'EMIRATES'
   },
 ];
@@ -105,9 +106,9 @@ const FlightCard: React.FC<FlightCardProps> = ({ logo, airline, from, to, depart
         </div>
 
         <div className="text-right">
-          <div className="text-md font-semibold text-gray-700">{price}</div>
+          <div className="text-md font-semibold text-gray-700">{formatCurrency(price, "NGN", "en-NG")}</div>
           <Button className="bg-yellow-600 text-white rounded-full px-4 py-1 text-sm mt-2 hover:bg-yellow-700">
-            BOOK NOW
+            View More
           </Button>
         </div>
       </div>
