@@ -135,11 +135,11 @@
 import React from "react";
 import {
   Home,
-  Plane,
-  CreditCard,
+  // Plane,
+  // CreditCard,
   FileText,
-  BarChart2,
-  Settings,
+  // BarChart2,
+  // Settings,
 } from "lucide-react";
 import Image from "next/image";
 import clsx from "clsx";
@@ -148,11 +148,11 @@ import { usePathname, useRouter } from "next/navigation";
 
 const navItems = [
   { label: "Dashboard", path: "/dashboard", icon: Home },
-  { label: "Flights", path: "/flights", icon: Plane },
-  { label: "Wallet", path: "/wallet", icon: CreditCard },
+  // { label: "Flights", path: "/flights", icon: Plane },
+  // { label: "Wallet", path: "/wallet", icon: CreditCard },
   { label: "Reports", path: "/report", icon: FileText },
-  { label: "Statistics", path: "/statistics", icon: BarChart2 },
-  { label: "Settings", path: "/settings", icon: Settings },
+  // { label: "Statistics", path: "/statistics", icon: BarChart2 },
+  // { label: "Settings", path: "/settings", icon: Settings },
 ];
 
 const Sidebar = () => {

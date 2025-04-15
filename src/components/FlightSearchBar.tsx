@@ -7,13 +7,13 @@ import { IoSwapHorizontal } from "react-icons/io5";
 
 const FlightSearchBar: React.FC = () => {
   const [selected, setSelected] = useState<
-    "ONE WAY" | "ROUND TRIP" | "MULTI CITY"
+    "ONE WAY" | "ROUND TRIP" 
   >("ONE WAY");
 
-  const options: Array<"ONE WAY" | "ROUND TRIP" | "MULTI CITY"> = [
+  const options: Array<"ONE WAY" | "ROUND TRIP" > = [
     "ONE WAY",
     "ROUND TRIP",
-    "MULTI CITY",
+    // "MULTI CITY",
   ];
 
   const [from, setFrom] = useState("NEW YORK (JFK)");

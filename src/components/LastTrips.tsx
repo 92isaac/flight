@@ -8,39 +8,39 @@ const tripData = [
   {
     name: "Jame Dan",
     email: "john@gmail.com",
-    flight: "Qatar",
-    members: 5,
-    price: "$56k",
+    flight: "Lagos",
+    members: "R",
+    price: "N56k",
     avatar: girl,
-    id: 12,
+    id:"12A4E67",
   },
  
   {
     name: "Martin Loiness",
     email: "martin_loi@gmail.com",
-    flight: "Emirates",
-    members: 2,
-    price: "$56k",
+    flight: "Abuja",
+    members: "0",
+    price: "N56k",
     avatar: ani,
-    id: 34,
+    id: "12A4E34",
   },
   {
     name: "John Doe",
     email: "john@gmail.com",
-    flight: "Qatar",
-    members: 5,
-    price: "$56k",
+    flight: "Portharcout",
+    members: "R",
+    price: "N56k",
     avatar: ben,
-    id: 56,
+    id: "45QER7T",
   },
   {
     name: "Martin Loiness",
     email: "martin_loi@gmail.com",
-    flight: "Emirates",
-    members: 2,
-    price: "$56k",
+    flight: "Kaduna",
+    members: "0",
+    price: "N56k",
     avatar: fli,
-    id: 89,
+    id: "09GHT23",
   },
 ];
 
@@ -55,7 +55,7 @@ const LastTrips: React.FC = () => {
       <div className="grid grid-cols-7 text-sm font-medium text-gray-500 border-b border-dashed pb-3">
         <span className="">Flight No</span>
         <span className="">Booking Ref.</span>
-        <span className="col-span-2">Members</span>
+        <span className="col-span-2">Name</span>
         <span>Destination</span>
         <span className="text-center">Trip</span>
         <span className="text-right">Ticket Price</span>
