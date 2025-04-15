@@ -1,14 +1,27 @@
 // import FlightSearch from '@/components/FlightSearch'
-import FlightSearchBar from '@/components/FlightSearchBar'
-import React from 'react'
+import FlightList from "@/components/FiightList";
+import FlightSearchBar from "@/components/FlightSearchBar";
+import FlightSidebar from "@/components/FlightSideBar";
+import ResultsHeader from "@/components/ResultHeader";
+import React from "react";
 
 const Page = () => {
   return (
-    <div>
+    <div className="w-full flex flex-col gap-5">
       <FlightSearchBar />
-      
-    </div>
-  )
-}
 
-export default Page
+      <ResultsHeader />
+
+      <div className="w-full flex gap-3 justify-between items-center h-[]">
+        <div className="w-2/3">
+          <FlightList />
+        </div>
+        <div className="w-1/3">
+          <FlightSidebar />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Page;

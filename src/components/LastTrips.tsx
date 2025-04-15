@@ -2,15 +2,33 @@
 
 import React from "react";
 import Image from "next/image";
+import { ani, ben, fli, girl } from "@/assets";
 
 const tripData = [
+  {
+    name: "Jame Dan",
+    email: "john@gmail.com",
+    flight: "Qatar",
+    members: 5,
+    price: "$56k",
+    avatar: girl,
+  },
+ 
+  {
+    name: "Martin Loiness",
+    email: "martin_loi@gmail.com",
+    flight: "Emirates",
+    members: 2,
+    price: "$56k",
+    avatar: ani,
+  },
   {
     name: "John Doe",
     email: "john@gmail.com",
     flight: "Qatar",
     members: 5,
     price: "$56k",
-    avatar: "/john.jpg", // Replace with actual image path or external URL
+    avatar: ben,
   },
   {
     name: "Martin Loiness",
@@ -18,20 +36,20 @@ const tripData = [
     flight: "Emirates",
     members: 2,
     price: "$56k",
-    avatar: "/martin.jpg", // Replace with actual image path or external URL
+    avatar: fli,
   },
 ];
 
 const LastTrips: React.FC = () => {
   return (
-    <div className="bg-white p-5 rounded-2xl w-full mx-auto h-[350px]">
+    <div className="bg-white p-5 rounded-2xl w-full mx-auto h-[350px] overflow-y-auto custom-scrollbar">
       <div className="mb-4">
         <h2 className="text-lg font-semibold text-gray-800">Last Trips</h2>
         <p className="text-sm text-gray-500">Overview of latest month</p>
       </div>
 
-      <div className="grid grid-cols-4 text-sm font-medium text-gray-500 border-b border-dashed pb-3">
-        <span>Members</span>
+      <div className="grid grid-cols-5 text-sm font-medium text-gray-500 border-b border-dashed pb-3">
+        <span className="col-span-2">Members</span>
         <span>Flight</span>
         <span className="text-center">Total Members</span>
         <span className="text-right">Ticket Price</span>
@@ -40,10 +58,10 @@ const LastTrips: React.FC = () => {
       {tripData.map((trip, idx) => (
         <div
           key={idx}
-          className="grid grid-cols-4 items-center py-4 border-b last:border-none border-dashed"
+          className="grid grid-cols-5 items-center py-4 border-b last:border-none border-dashed"
         >
           {/* Member */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 col-span-2">
             <div className="w-10 h-10 rounded-full overflow-hidden">
               <Image
                 src={trip.avatar}

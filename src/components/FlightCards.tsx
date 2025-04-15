@@ -3,6 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { plane, world } from "@/assets";
 
 const flightData = [
   {
@@ -10,21 +11,21 @@ const flightData = [
     price: "$548",
     bgColor: "bg-[#D2A43C]",
     textColor: "text-white",
-    image: "/plane.png",
+    image: plane,
   },
   {
     title: "Airbus 811",
     price: "$620",
     bgColor: "bg-[#30433E]",
     textColor: "text-white",
-    image: "/plane.png",
+    image: plane,
   },
   {
     title: "Total Flights",
     price: "850",
     bgColor: "bg-[#30433E]",
     textColor: "text-white",
-    image: "/map.png",
+    image: world,
     isMap: true,
   },
 ];
@@ -41,12 +42,12 @@ const FlightCards = () => {
             <p className="text-sm font-medium">{item.title}</p>
             <p className="text-2xl font-bold mt-1">{item.price}</p>
           </div>
-          <div className="absolute bottom-0 right-0 w-28 h-28">
+          <div className="absolute bottom-0 right-0 w-42 h-28">
             <Image
               src={item.image}
               alt="plane"
-              width={100}
-              height={100}
+              width={300}
+              height={300}
               className={`absolute bottom-0 right-0 ${
                 item.isMap ? "object-contain" : "rotate-[10deg]"
               }`}

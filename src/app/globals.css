@@ -125,3 +125,25 @@
 .clip-custom {
   clip-path: path("M0,0 H160 V160 H0 V0 Q80 80 0 0"); /* Custom inward curve */
 }
+
+.custom-scrollbar {
+  scrollbar-width: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 // import { MapPin } from 'lucide-react';
 import Image from 'next/image';
+import { world } from '@/assets';
 
 const FlightSidebar: React.FC = () => {
   return (
-    <div className="bg-[#36514C] rounded-[30px] text-white p-6 w-full max-w-xs mx-auto space-y-6">
+    <div className="bg-[#36514C] rounded-[30px] h-[460px] text-white p-6 w-full max-w-xs mx-auto space-y-6">
       {/* Header */}
       <div className="flex justify-between text-center text-sm font-semibold">
         <div>
@@ -21,7 +22,7 @@ const FlightSidebar: React.FC = () => {
       {/* Map Image with flight path */}
       <div className="relative">
         <Image
-          src="/map.png" // This should be the world map image you used
+          src={world}
           alt="Flight path"
           width={300}
           height={200}

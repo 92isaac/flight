@@ -1,10 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Button } from './ui/button';
+import { emirate, Lufthansa, qatar } from '@/assets';
 
 interface FlightCardProps {
   airline: string;
-  logo: string;
+  logo: StaticImageData;
   from: string;
   to: string;
   departure: string;
@@ -18,7 +19,7 @@ interface FlightCardProps {
 const flights: FlightCardProps[] = [
   {
     airline: 'Emirates',
-    logo: '/emirates.png',
+    logo: emirate,
     from: 'JFK',
     to: 'BOM',
     departure: '13:00',
@@ -30,7 +31,7 @@ const flights: FlightCardProps[] = [
   },
   {
     airline: 'QATAR',
-    logo: '/qatar.png',
+    logo: qatar,
     from: 'JFK',
     to: 'BOM',
     departure: '13:00',
@@ -42,7 +43,7 @@ const flights: FlightCardProps[] = [
   },
   {
     airline: 'Lufthansa',
-    logo: '/lufthansa.png',
+    logo: Lufthansa,
     from: 'JFK',
     to: 'BOM',
     departure: '13:00',
@@ -54,7 +55,19 @@ const flights: FlightCardProps[] = [
   },
   {
     airline: 'Emirates',
-    logo: '/emirates.png',
+    logo: emirate,
+    from: 'JFK',
+    to: 'BOM',
+    departure: '13:00',
+    arrival: '14:20',
+    duration: '11H 20M',
+    stops: 'NON-STOP',
+    price: '$1,872',
+    airlineName: 'EMIRATES'
+  },
+  {
+    airline: 'Emirates',
+    logo: emirate,
     from: 'JFK',
     to: 'BOM',
     departure: '13:00',
@@ -104,7 +117,7 @@ const FlightCard: React.FC<FlightCardProps> = ({ logo, airline, from, to, depart
 
 const FlightList = () => {
   return (
-    <div className="max-w-4xl mx-auto bg-[#eaf3f2] p-4 space-y-4 rounded-3xl">
+    <div className="w-full h-[460px] overflow-y-auto custom-scrollbar mx-auto bg-[#eaf3f2] p-4 space-y-1 rounded-3xl">
       {flights.map((flight, index) => (
         <FlightCard key={index} {...flight} />
       ))}
