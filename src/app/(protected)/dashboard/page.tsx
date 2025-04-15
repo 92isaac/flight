@@ -1,10 +1,34 @@
 import FlightCards from "@/components/FlightCards";
-import FlightsScheduleChart from "@/components/FlightSchedule2";
-import FlightShareChart from "@/components/FlightShare";
+// import FlightsScheduleChart from "@/components/FlightSchedule2";
+// import FlightShareChart from "@/components/FlightShare";
 // import FlightsScheduleChart from "@/components/FlightsScheduleChart";
 import LastTrips from "@/components/LastTrips";
-import StatisticsChart from "@/components/StaticticsChart";
 import React from "react";
+import dynamic from "next/dynamic";
+const StatisticsChart = dynamic(() => import("@/components/StaticticsChart"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex justify-center items-center">
+     loading...
+    </div>
+  ),
+});
+const FlightShareChart = dynamic(() => import("@/components/FlightShare"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex justify-center items-center">
+     loading...
+    </div>
+  ),
+});
+const FlightsScheduleChart = dynamic(() => import("@/components/FlightSchedule2"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex justify-center items-center">
+     loading...
+    </div>
+  ),
+});
 
 const Page = () => {
   return (
