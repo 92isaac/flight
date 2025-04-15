@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import React from "react";
@@ -64,6 +65,7 @@ const StatisticsChart = () => {
   return (
     <div className="bg-white rounded-2xl p-5 shadow-sm w-full max-w-[350px] min-w-[280px]">
       <h2 className="text-md font-semibold text-[#2D554E] mb-4">Statistics</h2>
+      {/* @ts-ignore */}
       <Bar data={data} options={options} />
     </div>
   );
