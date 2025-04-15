@@ -31,7 +31,7 @@ const FlightSidebar: React.FC = () => {
         <div className="absolute top-[25%] left-[20%] text-xs font-semibold text-white">NEW YORK</div>
         <div className="absolute top-[25%] right-[10%] text-xs font-semibold text-white">MUMBAI</div>
         <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2">
-          <Image src="/plane-path.png" alt="Flight" width={100} height={40} />
+          {/* <Image src="/plane-path.png" alt="Flight" width={100} height={40} /> */}
         </div>
       </div>
 
