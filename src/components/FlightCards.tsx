@@ -7,21 +7,28 @@ import { plane, world } from "@/assets";
 
 const flightData = [
   {
-    title: "Boeing 787",
-    price: "$548",
+    title: "Departure",
+    price: "548",
     bgColor: "bg-[#D2A43C]",
     textColor: "text-white",
     image: plane,
   },
   {
-    title: "Airbus 811",
-    price: "$620",
+    title: "Pending",
+    price: "620",
     bgColor: "bg-[#30433E]",
     textColor: "text-white",
     image: plane,
   },
   {
-    title: "Total Flights",
+    title: "Expired",
+    price: "620",
+    bgColor: "bg-[#30433E]",
+    textColor: "text-white",
+    image: plane,
+  },
+  {
+    title: "Total Tickets",
     price: "850",
     bgColor: "bg-[#30433E]",
     textColor: "text-white",
@@ -36,7 +43,7 @@ const FlightCards = () => {
       {flightData.map((item:any, index:number) => (
         <div
           key={index}
-          className={`relative flex flex-col justify-between ${item.bgColor} ${item.textColor} rounded-2xl p-5  h-[120px] min-w-[380px] shadow-sm`}
+          className={`relative flex flex-col justify-between ${item.bgColor} ${item.textColor} rounded-2xl p-5  h-[120px] min-w-[280px] shadow-sm`}
         >
           <div className="z-10">
             <p className="text-sm font-medium">{item.title}</p>

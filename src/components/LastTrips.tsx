@@ -12,6 +12,7 @@ const tripData = [
     members: 5,
     price: "$56k",
     avatar: girl,
+    id: 12,
   },
  
   {
@@ -21,6 +22,7 @@ const tripData = [
     members: 2,
     price: "$56k",
     avatar: ani,
+    id: 34,
   },
   {
     name: "John Doe",
@@ -29,6 +31,7 @@ const tripData = [
     members: 5,
     price: "$56k",
     avatar: ben,
+    id: 56,
   },
   {
     name: "Martin Loiness",
@@ -37,6 +40,7 @@ const tripData = [
     members: 2,
     price: "$56k",
     avatar: fli,
+    id: 89,
   },
 ];
 
@@ -44,23 +48,27 @@ const LastTrips: React.FC = () => {
   return (
     <div className="bg-white p-5 rounded-2xl w-full mx-auto h-[350px] overflow-y-auto custom-scrollbar">
       <div className="mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">Last Trips</h2>
-        <p className="text-sm text-gray-500">Overview of latest month</p>
+        <h2 className="text-lg font-semibold text-gray-800">Latest Bookings</h2>
+        <p className="text-sm text-gray-500">Overview of latest booking</p>
       </div>
 
-      <div className="grid grid-cols-5 text-sm font-medium text-gray-500 border-b border-dashed pb-3">
+      <div className="grid grid-cols-7 text-sm font-medium text-gray-500 border-b border-dashed pb-3">
+        <span className="">Flight No</span>
+        <span className="">Booking Ref.</span>
         <span className="col-span-2">Members</span>
-        <span>Flight</span>
-        <span className="text-center">Total Members</span>
+        <span>Destination</span>
+        <span className="text-center">Trip</span>
         <span className="text-right">Ticket Price</span>
       </div>
 
       {tripData.map((trip, idx) => (
         <div
           key={idx}
-          className="grid grid-cols-5 items-center py-4 border-b last:border-none border-dashed"
+          className="grid grid-cols-7 items-center py-4 border-b last:border-none border-dashed"
         >
           {/* Member */}
+          <p className="text-sm text-gray-700">{trip.id}</p>
+          <p className="text-sm text-gray-700">{trip.id}</p>
           <div className="flex items-center gap-3 col-span-2">
             <div className="w-10 h-10 rounded-full overflow-hidden">
               <Image
