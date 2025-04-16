@@ -22,8 +22,8 @@ const FlightSearchBar: React.FC = () => {
     // "MULTI CITY",
   ];
 
-  const [from, setFrom] = useState("NEW YORK (JFK)");
-  const [to, setTo] = useState("MUMBAI (BOM)");
+  const [from, setFrom] = useState("MM1 (LAG)");
+  const [to, setTo] = useState("KAN (Kano)");
 
   const handleSwap = () => {
     setFrom(to);
