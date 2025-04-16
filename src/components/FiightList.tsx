@@ -1,7 +1,7 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Button } from './ui/button';
-import { emirate, Lufthansa, qatar } from '@/assets';
+import { ani, ben, emirate, fli, girl, Lufthansa, qatar } from '@/assets';
 import { formatCurrency } from '@/lib/utils';
 
 interface FlightCardProps {
@@ -15,6 +15,12 @@ interface FlightCardProps {
   stops: string;
   price: string;
   airlineName: string;
+  name:string;
+  email:string;
+  flight:string;
+  members:string;
+  avatar:StaticImageData;
+  id:string;
 }
 
 const flights: FlightCardProps[] = [
@@ -28,7 +34,13 @@ const flights: FlightCardProps[] = [
     duration: '11H 20M',
     stops: 'NON-STOP',
     price: '1572',
-    airlineName: 'EMIRATES'
+    airlineName: 'EMIRATES',
+    name: "Jame Dan",
+    email: "john@gmail.com",
+    flight: "Lagos",
+    members: "R",
+    avatar: girl,
+    id:"12A4E67",
   },
   {
     airline: 'QATAR',
@@ -40,7 +52,13 @@ const flights: FlightCardProps[] = [
     duration: '11H 20M',
     stops: 'NON-STOP',
     price: '201072',
-    airlineName: 'QATAR AIRWAYS'
+    airlineName: 'QATAR AIRWAYS',
+    name: "Martin Loiness",
+    email: "martin_loi@gmail.com",
+    flight: "Abuja",
+    members: "0",
+    avatar: ani,
+    id: "12A4E34",
   },
   {
     airline: 'Lufthansa',
@@ -52,7 +70,13 @@ const flights: FlightCardProps[] = [
     duration: '11H 20M',
     stops: 'NON-STOP',
     price: '100872',
-    airlineName: 'LUFTHANSA'
+    airlineName: 'LUFTHANSA',
+    name: "John Doe",
+    email: "john@gmail.com",
+    flight: "Portharcout",
+    members: "R",
+    avatar: ben,
+    id: "45QER7T",
   },
   {
     airline: 'Emirates',
@@ -64,7 +88,13 @@ const flights: FlightCardProps[] = [
     duration: '11H 20M',
     stops: 'NON-STOP',
     price: '100872',
-    airlineName: 'EMIRATES'
+    airlineName: 'EMIRATES',
+    name: "Martin Loiness",
+    email: "martin_loi@gmail.com",
+    flight: "Kaduna",
+    members: "0",
+    avatar: fli,
+    id: "09GHT23",
   },
   {
     airline: 'Emirates',
@@ -76,17 +106,39 @@ const flights: FlightCardProps[] = [
     duration: '11H 20M',
     stops: 'NON-STOP',
     price: '100872',
-    airlineName: 'EMIRATES'
+    airlineName: 'EMIRATES',
+    name: "John Doe",
+    email: "john@gmail.com",
+    flight: "Portharcout",
+    members: "R",
+    avatar: ben,
+    id: "45QER7T",
   },
 ];
 
-const FlightCard: React.FC<FlightCardProps> = ({ logo, airline, from, to, departure, arrival, duration, stops, price, airlineName }) => {
+const FlightCard: React.FC<FlightCardProps> = ({ logo, airline, from, to, departure, arrival, duration, stops, price, airlineName, avatar, name, email }) => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-center bg-white p-4 rounded-2xl shadow-sm border-t border-b border-gray-200">
       <div className="flex items-center gap-4 w-full md:w-1/4">
         <Image src={logo} alt={airline} width={50} height={50} className="object-contain" />
         <div className="text-sm font-semibold text-gray-700">{airline}</div>
       </div>
+
+        <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden">
+                    <Image
+                      src={avatar}
+                      alt={name}
+                      width={40}
+                      height={40}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="text-sm">
+                    <p className="font-medium text-gray-800">{name}</p>
+                    <p className="text-gray-500">{email}</p>
+                  </div>
+                </div>
 
       <div className="flex items-center justify-between w-full md:w-3/4 text-sm mt-4 md:mt-0">
         <div className="text-center">
