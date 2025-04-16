@@ -4,13 +4,19 @@ import React, { useState } from "react";
 import { MapPin, CalendarDays, User, Plane } from "lucide-react";
 import DateRangePicker from "./DateRangePicker";
 import { IoSwapHorizontal } from "react-icons/io5";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  // DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const FlightSearchBar: React.FC = () => {
-  const [selected, setSelected] = useState<
-    "ONE WAY" | "ROUND TRIP" 
-  >("ONE WAY");
+  const [selected, setSelected] = useState<"ONE WAY" | "ROUND TRIP">("ONE WAY");
 
-  const options: Array<"ONE WAY" | "ROUND TRIP" > = [
+  const options: Array<"ONE WAY" | "ROUND TRIP"> = [
     "ONE WAY",
     "ROUND TRIP",
     // "MULTI CITY",
@@ -27,19 +33,7 @@ const FlightSearchBar: React.FC = () => {
     <div className="bg-[#eaf3f1] px-6 py-4 rounded-3xl w-full mx-auto">
       <div className="flex flex-wrap w-full justify-between items-center gap-4">
         <div className="grid grid-cols-2 gap-5 w-full ">
-          {/* <div className="flex items-center bg-[#e1edeb] rounded-full justify-between">
-            <div className="flex items-center gap-2  px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
-              <MapPin size={16} />
-              <span>NEY YORK (JFK)</span>
-            </div>
-            <div className="flex items-center justify-center bg-[#365553] rounded-full p-2">
-              <IoSwapHorizontal size={20} className="text-[#e1edeb]" /> 
-            </div>
-            <div className="flex items-center gap-2 bg-[#e1edeb] px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
-              <MapPin size={16} />
-              <span>MUMBAI (BOM)</span>
-            </div>
-          </div> */}
+       
 
           <div className="flex items-center bg-[#e1edeb] rounded-full justify-between">
             <div className="flex items-center gap-2 px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
@@ -66,10 +60,28 @@ const FlightSearchBar: React.FC = () => {
               <DateRangePicker />
             </div>
 
-            <div className="flex flex-1 justify-center items-center gap-4 bg-[#e1edeb] px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
-              <User size={16} />
-              <span>2 TRAVELLER</span>
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild className="cursor-pointer">
+                <div className="flex flex-1 justify-center items-center gap-4 bg-[#e1edeb] px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
+                  <User size={16} />
+                  <span>2 TRAVELLER</span>
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="w-56 z-[10000000] font-rubik font-normal"
+                align="end"
+                forceMount
+              >
+                <DropdownMenuGroup>
+                  <DropdownMenuItem className="font-semibold">
+                    1 TRAVELLER
+                  </DropdownMenuItem>
+                  {/* <DropdownMenuSeparator /> */}
+                  <DropdownMenuItem>3-5 TRAVELLER</DropdownMenuItem>
+                  <DropdownMenuItem>MORE THAN 5 TRAVELLER</DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>
