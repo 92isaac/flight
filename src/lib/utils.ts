@@ -19,3 +19,24 @@ export const formatCurrency = (
     minimumFractionDigits: 2,
   }).format(Number(value));
 };
+
+
+type LocationOption = {
+  code: string;
+  city: string;
+  label: string; 
+};
+
+export const locationOptions: LocationOption[] = [
+  { code: "LAG", city: "Lagos", label: "MM1 (LAG)" },
+  { code: "KAN", city: "Kano", label: "KAN (Kano)" },
+  { code: "ABV", city: "Abuja", label: "ABV (Abuja)" },
+];
+
+
+export const statusOptions= [
+  { value: "departure", label: "Departure" },
+  { value: "pending", label: "Pending" },
+  { value: "refund", label: "Refund" },
+  { value: "expired", label: "Expired" },
+];

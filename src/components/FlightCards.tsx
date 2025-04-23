@@ -17,7 +17,7 @@ const flightData = [
   },
   {
     title: "Pending",
-    price: "252",
+    price: "202",
     revenue: "3480000",
     bgColor: "bg-[#1E9EB3]",
     textColor: "text-white",
@@ -28,6 +28,14 @@ const flightData = [
     price: "50",
     revenue: "948000",
     bgColor: "bg-[#46C2B0]",
+    textColor: "text-white",
+    image: plane,
+  },
+  {
+    title: "Refund",
+    price: "50",
+    revenue: "948000",
+    bgColor: "bg-[#D2A43C]",
     textColor: "text-white",
     image: plane,
   },
@@ -48,7 +56,7 @@ const FlightCards = () => {
       {flightData.map((item:any, index:number) => (
         <div
           key={index}
-          className={`relative flex flex-col justify-between ${item.bgColor} ${item.textColor} rounded-2xl p-5  h-[120px] min-w-[280px] shadow-sm`}
+          className={`relative flex flex-col justify-between ${item.bgColor} ${item.textColor} rounded-2xl p-5  h-[120px] min-w-[225px] shadow-sm`}
         >
           <div className="z-10">
             <p className="text-sm font-medium">{item.title}</p>

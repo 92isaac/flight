@@ -147,3 +147,28 @@
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
+
+.flight__indicator-separator {
+  display: none;
+}
+.flight__control{
+  border: none !important;
+  background-color: #e1edeb !important;
+}
+
+.flight__control:focus{
+  border: none !important;
+  outline: none !important;
+}
+
+.flight-status__indicator-separator {
+  display: none;
+}
+
+.flight-status__control{
+  border-radius: 50px !important;
+  background-color: #e1edeb !important;
+  outline: none !important;
+  border: none;
+
+}

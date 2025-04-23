@@ -1,10 +1,11 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, FileText, Printer } from "lucide-react";
 import {   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   // DropdownMenuSeparator,
   DropdownMenuTrigger, } from "./ui/dropdown-menu";
+  import { FaFileCsv } from "react-icons/fa6";
 
 const ResultsHeader = () => {
   return (
@@ -14,15 +15,15 @@ const ResultsHeader = () => {
       </h2>
 
       <div className="flex items-center gap-3">
-        <button className="bg-white rounded-full px-5 py-2 text-sm font-semibold text-[#2E3D3D]">
+        {/* <button className="bg-white rounded-full px-5 py-2 text-sm font-semibold text-[#2E3D3D]">
           FILTER
-        </button>
+        </button> */}
 
        
         <DropdownMenu>
             <DropdownMenuTrigger asChild className="cursor-pointer">
             <button className="bg-white rounded-full px-5 py-2 text-sm font-semibold text-[#2E3D3D] flex items-center gap-2">
-          TICKET OF CLASS
+         Export
           <ChevronDown size={16} className="text-[#2E3D3D]" />
         </button>
             </DropdownMenuTrigger>
@@ -36,14 +37,14 @@ const ResultsHeader = () => {
                   className="font-semibold"
                
                 >
-             First Class
+                <Printer /> Print
                 </DropdownMenuItem>
                 {/* <DropdownMenuSeparator /> */}
                 <DropdownMenuItem>
-                Business Class
+                <FileText /> PDF
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                Economy Class
+                <FaFileCsv /> CSV
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
