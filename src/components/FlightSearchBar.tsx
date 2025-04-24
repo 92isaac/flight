@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CalendarDays, Plane } from "lucide-react";
+import { Plane } from "lucide-react";
 import DateRangePicker from "./DateRangePicker";
 import { IoSwapHorizontal } from "react-icons/io5";
 // import {
@@ -109,6 +109,7 @@ const FlightSearchBar: React.FC = () => {
               <Select
                 options={locationOptions}
                 value={to}
+                placeholder="Select arrival"
                 onChange={(selected) => selected && setTo(selected)}
                 getOptionLabel={(option) => `${option.label} - ${option.city}`}
                 getOptionValue={(option) => option.code}
@@ -138,32 +139,39 @@ const FlightSearchBar: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-5 w-full justify-between">
-            <div className="flex flex-1 items-center justify-center gap-4 bg-[#e1edeb] px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
-              <CalendarDays size={16} />
-              <DateRangePicker />
+            <div className="flex flex-1 w-full items-center justify-center gap-2 bg-[#e1edeb] px-4 py-1 rounded-full text-sm font-medium text-[#365553]">
+              <Plane size={16} />
+              <input
+                type="text"
+                name=""
+                id=""
+                className="h-full w-full py-2 px-2 border-0 outline-0 ring-0"
+                placeholder="Ticket No."
+              />
             </div>
 
-            {/* <DropdownMenu>
-              <DropdownMenuTrigger asChild className="cursor-pointer">
-                <div className="flex flex-1 justify-center items-center gap-4 bg-[#e1edeb] px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
-                  <User size={16} />
-                  <span>2 TRAVELLER</span>
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                className="w-56 z-[10000000] font-rubik font-normal"
-                align="end"
-                forceMount
-              >
-                <DropdownMenuGroup>
-                  <DropdownMenuItem className="font-semibold">
-                    1 TRAVELLER
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>3-5 TRAVELLER</DropdownMenuItem>
-                  <DropdownMenuItem>MORE THAN 5 TRAVELLER</DropdownMenuItem>
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu> */}
+            <div className="w-full flex-1 rounded-3xl px-2">
+              <Select
+                options={statusOptions}
+                value={statusOptions.find((opt) => opt.value === status)}
+                onChange={(selected) => {
+                  if (selected) {
+                    setStatus(selected.value);
+                  }
+                }}
+                placeholder="Status"
+                classNamePrefix="flight-status"
+                isSearchable
+                className="text-sm  ring-0 border-none"
+                classNames={{
+                  control: () =>
+                    "bg-transparent py-1 border-none rounded-full bg-[#e1edeb] ring-0 shadow-none",
+                  singleValue: () => "text-[#365553]",
+                  input: () => "text-[#365553]",
+                  menu: () => "z-[999]",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -185,7 +193,7 @@ const FlightSearchBar: React.FC = () => {
           ))}
         </div> */}
 
-        <div className="w-full max-w-[40%] rounded-3xl px-2">
+        <div className="w-full max-w-[40%] hidden rounded-3xl px-2">
           <Select
             options={statusOptions}
             value={statusOptions.find((opt) => opt.value === status)}
@@ -197,7 +205,7 @@ const FlightSearchBar: React.FC = () => {
             placeholder="Status"
             classNamePrefix="flight-status"
             isSearchable
-            className="text-sm bg-[#e1edeb] ring-0 border-none"
+            className="text-sm  ring-0 border-none"
             classNames={{
               control: () =>
                 "bg-transparent border-none rounded-full bg-[#e1edeb] ring-0 shadow-none",
@@ -208,20 +216,14 @@ const FlightSearchBar: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-1 flex-wrap justify-between items-center gap-4">
-          <div className="flex flex-1 items-center justify-center gap-2 bg-[#e1edeb] px-4 py-1 rounded-full text-sm font-medium text-[#365553]">
-            <Plane size={16} />
-            <input
-              type="text"
-              name=""
-              id=""
-              className="h-full w-full py-2 px-2 border-0 outline-0 ring-0"
-              placeholder="Ticket No."
-            />
+        <div className="flex flex-1 flex-wrap mx-auto w-2/3 justify-center items-center gap-4">
+          <div className="flex flex- items-center justify-center gap-4 bg-[#e1edeb] px-4 py-3 rounded-full text-sm font-medium text-[#365553]">
+            {/* <CalendarDays size={16} /> */}
+            <DateRangePicker />
           </div>
 
           {/* Search Button */}
-          <button className="bg-[#c9992d] flex-1 hover:bg-[#b38728] text-white text-sm font-bold px-10 py-3 rounded-full">
+          <button className="bg-[#c9992d] flex- w-36 hover:bg-[#b38728] text-white text-sm font-bold px-10 py-3 rounded-full">
             SEARCH
           </button>
         </div>

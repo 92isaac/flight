@@ -35,7 +35,7 @@ const FlightsScheduleChart = dynamic(() => import("@/components/FlightSchedule2"
 
 const Page = () => {
   return (
-    <div className="w-full flex flex-col gap-5">
+    <div className="w-full flex flex-col gap-3">
       <FlightCards />
       <div className="w-full flex gap-5 justify-between items-center h-[]">
         <div className="w-2/3">
@@ -45,7 +45,7 @@ const Page = () => {
           <StatisticsChart />
         </div>
       </div>
-      <div className="w-full flex justify-between items-center">
+      <div className="w-full flex gap-5 justify-between items-center">
       <div className="w-1/3">
         <FlightShareChart />
       </div>

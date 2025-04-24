@@ -169,6 +169,6 @@
   border-radius: 50px !important;
   background-color: #e1edeb !important;
   outline: none !important;
-  border: none;
+  border: none !important;
 
 }

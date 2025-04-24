@@ -92,7 +92,7 @@ const FlightsScheduleChart = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-md w-full min-w-[600px]">
+    <div className="bg-white rounded-xl p-4 shadow-md w-full min-w-[600px] h-[350px]">
       <h2 className="text-lg font-semibold text-[#2D4A41] mb-2">
         Flights Schedule
       </h2>
