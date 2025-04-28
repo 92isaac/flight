@@ -2,76 +2,23 @@
 
 import React from "react";
 import Image from "next/image";
-import { ani, ben, fli, girl } from "@/assets";
 import { Button } from "./ui/button";
-import { formatCurrency } from "@/lib/utils";
+import { formatCurrency, tripData } from "@/lib/utils";
 
-const tripData = [
-  {
-    name: "Jame Dan",
-    email: "john@gmail.com",
-    flight: "Lagos",
-    members: "R",
-    price: "N56k",
-    avatar: girl,
-    id:"12A4E67",
-    price2: '1572',
-
-  },
- 
-  {
-    name: "Martin Loiness",
-    email: "martin_loi@gmail.com",
-    flight: "Abuja",
-    members: "0",
-    price: "N56k",
-    avatar: ani,
-    id: "12A4E34",
-    price2: '201072',
-
-  },
-  {
-    name: "John Doe",
-    email: "john@gmail.com",
-    flight: "Portharcout",
-    members: "R",
-    price: "N56k",
-    avatar: ben,
-    id: "45QER7T",
-    price2: '100872',
-
-  },
-  {
-    name: "Martin Loiness",
-    email: "martin_loi@gmail.com",
-    flight: "Kaduna",
-    members: "0",
-    price: "N56k",
-    avatar: fli,
-    id: "09GHT23",
-    price2: '100872',
-  },
-  {
-    airline: 'Emirates',
-    from: 'JFK',
-    to: 'BOM',
-    departure: '13:00',
-    arrival: '14:20',
-    duration: '11H 20M',
-    stops: 'NON-STOP',
-    price: 'N100k',
-    price2: '100872',
-    airlineName: 'EMIRATES',
-    name: "John Doe",
-    email: "john@gmail.com",
-    flight: "Portharcout",
-    members: "R",
-    avatar: ben,
-    id: "45QER7T",
+interface LastTripsProps {
+  trips: typeof tripData;
+  loading: boolean;
+}
+const LastTrips: React.FC<LastTripsProps> = ({ trips, loading }) => {
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="text-yellow-600 font-semibold text-lg animate-pulse">
+          Loading bookings...
+        </div>
+      </div>
+    );
   }
-];
-
-const LastTrips: React.FC = () => {
   return (
     <div className="bg-white p-5 rounded-2xl w-full mx-auto h-[450px] overflow-y-auto custom-scrollbar">
       <div className="mb-4">
@@ -89,7 +36,13 @@ const LastTrips: React.FC = () => {
         <span className="text-right">Action</span>
       </div>
 
-      {tripData.map((trip, idx) => (
+      {
+              trips.length === 0 ? (
+                <p className="text-center text-gray-500 mt-10">No bookings found.</p>
+              ) : (
+        
+      
+                trips.map((trip, idx) => (
         <div
           key={idx}
           className="grid grid-cols-9 items-center py-4 border-b last:border-none border-dashed"
@@ -132,7 +85,7 @@ const LastTrips: React.FC = () => {
           </Button>
         </div>
         </div>
-      ))}
+      )))}
     </div>
   );
 };

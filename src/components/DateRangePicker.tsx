@@ -142,10 +142,16 @@ interface DateRange {
   endDate: Date | null;
 }
 
-const DateRangePicker: React.FC = () => {
+
+interface DateRangePickerProps {
+  range: DateRange;
+  setRange: (value: DateRange) => void;
+}
+
+const DateRangePicker: React.FC<DateRangePickerProps> = ({ range, setRange }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null);
-  const [range, setRange] = useState<DateRange>({ startDate: null, endDate: null });
+  // const [range, setRange] = useState<DateRange>({ startDate: null, endDate: null });
   const [showCalendar, setShowCalendar] = useState(false);
 
   const calendarRef = useRef<HTMLDivElement | null>(null);

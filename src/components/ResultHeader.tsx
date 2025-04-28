@@ -7,11 +7,11 @@ import {   DropdownMenu,
   DropdownMenuTrigger, } from "./ui/dropdown-menu";
   import { FaFileCsv } from "react-icons/fa6";
 
-const ResultsHeader = () => {
+const ResultsHeader = ({count}:{count:number}) => {
   return (
     <div className="flex items-center justify-between px-4 py-3 w-full flex-wrap gap-3">
       <h2 className="text-sm font-medium tracking-wide text-[#2E3D3D]">
-        RESULT <span className="font-semibold">(25)</span>
+        RESULT <span className="font-semibold">({count})</span>
       </h2>
 
       <div className="flex items-center gap-3">
